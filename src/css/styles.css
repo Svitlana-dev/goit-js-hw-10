@@ -527,12 +527,12 @@ body .iziToast-wrapper.iziToast-wrapper-topRight {
   top: 20px;
 }
 
-body .iziToast-wrapper.iziToast-wrapper-topRight .iziToast.iziToast-success {
-  background: #4caf50 !important;
+body .iziToast.iziToast-color-green {
+  background: #4caf50;
 }
 
-body .iziToast-wrapper.iziToast-wrapper-topRight .iziToast.iziToast-error {
-  background: #ef4040 !important;
+body .iziToast.iziToast-color-red {
+  background: #b71c1c;
 }
 
 body
