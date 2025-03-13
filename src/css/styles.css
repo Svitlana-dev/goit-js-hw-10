@@ -1,6 +1,45 @@
+/* Common */
+
 body {
   font-family: 'Montserrat', sans-serif !important;
 }
+
+.nav-list {
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 12px;
+  max-width: 300px;
+}
+
+.nav-list li {
+  background: #4e75ff;
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.nav-list a {
+  display: block;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out, color 0.3s;
+}
+
+.nav-list li:hover {
+  background: #6c8cff;
+}
+
+.nav-list a:hover {
+  transform: scale(1.05);
+}
+
+/* Task 1 */
 
 #datetime-picker {
   box-sizing: border-box;
@@ -34,21 +73,249 @@ body {
   cursor: not-allowed;
 }
 
-/* === Загальний контейнер календаря === */
-.flatpickr-calendar {
-  max-width: 280px;
+body .flatpickr-calendar {
   width: 280px;
-  background: #f5f5f5 !important;
+  background: #f5f5f5;
   border-radius: 8px;
-  padding: 16px !important;
+  padding: 16px;
   overflow: hidden;
   margin-top: 8px;
 }
 
-/* === Верхня панель вибору місяця та року === */
-.flatpickr-months {
+body .flatpickr-calendar .flatpickr-months {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-months
+  .flatpickr-month
+  .flatpickr-current-month {
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+body .flatpickr-calendar .flatpickr-months .flatpickr-month {
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-months
+  .flatpickr-month
+  .flatpickr-current-month
+  .flatpickr-monthDropdown-months {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-months
+  .flatpickr-month
+  .flatpickr-current-month
+  input.cur-year {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  padding: 0;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-months
+  .flatpickr-month
+  .flatpickr-current-month
+  .numInputWrapper
+  span.arrowUp {
+  position: absolute;
+  right: -2px;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-months
+  .flatpickr-month
+  .flatpickr-current-month
+  .numInputWrapper
+  span.arrowDown {
+  position: absolute;
+  right: -2px;
+  bottom: 2px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+body .flatpickr-calendar .flatpickr-months .flatpickr-prev-month,
+body .flatpickr-calendar .flatpickr-months .flatpickr-next-month {
+  position: absolute;
+  top: 7px;
+  transform: none;
+  color: #2e2f42;
+  font-size: 18px;
+  transition: color 0.2s ease-in-out;
+}
+
+body .flatpickr-calendar .flatpickr-months .flatpickr-prev-month {
+  left: 10px;
+}
+
+body .flatpickr-calendar .flatpickr-months .flatpickr-next-month {
+  right: 10px;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-rContainer
+  .flatpickr-weekdays
+  .flatpickr-weekdaycontainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  max-width: 250px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-rContainer
+  .flatpickr-weekdays
+  .flatpickr-weekdaycontainer
+  .flatpickr-weekday {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2e2f42;
+  line-height: 150%;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer {
+  margin: 16px 0;
+  max-width: 248px;
+  min-width: 0;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer
+  .flatpickr-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  width: 36px;
+  height: 36px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #666;
+  transition: all 0.2s ease-in-out;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer
+  .flatpickr-day.prevMonthDay {
+  color: #c1c1c1;
+  background: transparent;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer
+  .flatpickr-day.nextMonthDay {
+  color: #c1c1c1;
+  background: transparent;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer
+  .flatpickr-day.selected,
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer
+  .flatpickr-day.today {
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer
+  .flatpickr-day:hover {
+  fill: #c1c1c1;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer
+  .flatpickr-day.selected {
+  background: #4e75ff;
+  color: white;
+}
+
+body
+  .flatpickr-calendar
+  .flatpickr-innerContainer
+  .flatpickr-days
+  .dayContainer
+  .flatpickr-day.today {
+  border: 1px solid #4e75ff;
+}
+
+body .flatpickr-calendar.hasTime .flatpickr-time {
+  display: flex;
+  justify-content: center;
   align-items: center;
   font-weight: 600;
   font-size: 16px;
@@ -56,140 +323,13 @@ body {
   color: #333;
 }
 
-/* === Стилізація вибору місяця === */
-.flatpickr-monthDropdown-months {
-  font-size: 16px;
-  font-weight: bold;
-  color: #2e2f42;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-/* === Стилізація вибору року === */
-.flatpickr-current-month {
-  display: flex;
-  align-items: center;
-  gap: 3px; /* Менший відступ */
-}
-
-.flatpickr-current-month input.cur-year {
-  font-size: 16px;
-  font-weight: bold;
-  color: #2e2f42;
-  border: none;
-  outline: none;
-  background: transparent;
-  text-align: right;
-  width: 48px; /* Оптимальна ширина */
-}
-
-/* Обмеження ширини контейнера року */
-.flatpickr-months .numInputWrapper {
-  max-width: 50px;
-}
-
-/* === Стрілки навігації по місяцях === */
-.flatpickr-prev-month,
-.flatpickr-next-month {
-  color: #2e2f42;
-  font-size: 18px;
-  padding: 5px;
-  transition: color 0.2s ease-in-out;
-}
-
-/* Hover-ефект для стрілок */
-.flatpickr-prev-month:hover,
-.flatpickr-next-month:hover {
-  color: #000;
-}
-
-/* === Дні тижня (Mo, Tu, We...) === */
-.flatpickr-weekdays {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  text-align: center;
-  color: #2e2f42;
-  margin-top: 24px;
-}
-
-/* === Контейнер для днів === */
-.flatpickr-days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 4px; /* Менші відступи між днями */
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  padding: 10px 5px;
-  box-sizing: border-box;
-}
-
-/* === Дні в календарі === */
-.flatpickr-day {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.04em;
-  text-align: center;
-  color: #666;
-}
-
-/* Наведення на день */
-.flatpickr-day:hover {
-  background: #4e75ff;
-  color: white;
-  transform: scale(1.05);
-}
-
-/* Виділений день */
-.flatpickr-day.selected {
-  background: #003fc5;
-  color: white;
-  font-weight: bold;
-}
-
-/* Сьогоднішній день */
-.flatpickr-day.today {
-  border: 2px solid #4e75ff;
-  font-weight: bold;
-  background: none;
-}
-
-/* Недоступні дні (сіра дата) */
-.flatpickr-day.disabled {
-  color: #aaa;
-  background: none;
-  cursor: not-allowed;
-}
-
-/* === Стилізація часу (17:25) === */
-.flatpickr-time {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: #2e2f42;
-  padding: 10px 0;
-}
-
-/* Контейнер для вибору часу */
-.flatpickr-time-separator {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Випадаючі списки часу */
-.flatpickr-time input {
+body .flatpickr-calendar .flatpickr-time input {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
   border: none;
   outline: none;
   background: transparent;
-  width: 50px;
 }
 
 button {
@@ -262,8 +402,6 @@ button[data-start]:disabled {
 }
 
 /* Task 2 */
-
-/* Форма */
 
 .pole {
   display: flex;
@@ -370,48 +508,51 @@ button[data-start]:disabled {
   background: #6c8cff;
 }
 
-/* Загальні стилі для iziToast */
-.iziToast-custom {
-  width: auto !important;
-  min-width: 320px !important;
-  max-width: 400px !important; /* Обмежує максимальну ширину */
-  border-radius: 8px !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  padding: 12px 16px !important;
-  display: flex !important;
-  align-items: center !important;
-  color: #fff !important;
-}
-
-/* Фіксоване позиціонування */
-.iziToast-wrapper {
-  width: auto !important;
-  max-width: 400px !important;
-  position: absolute !important;
-  right: 20px !important; /* Розташування в правому верхньому куті */
-  top: 20px !important;
-}
-
-/* Окремий стиль для успішного повідомлення */
-.iziToast-success {
-  background: #4caf50 !important; /* Зелений фон */
-}
-
-.iziToast-error {
+body .iziToast-wrapper.iziToast-wrapper-topRight .iziToast {
+  width: auto;
+  min-width: 320px;
+  max-width: 400px;
   border-radius: 4px;
+  line-height: 150%;
   padding: 20px;
-  width: 302px;
-  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+body .iziToast-wrapper.iziToast-wrapper-topRight {
+  width: auto;
+  max-width: 400px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+body .iziToast-wrapper.iziToast-wrapper-topRight .iziToast.iziToast-success {
+  background: #4caf50 !important;
+}
+
+body .iziToast-wrapper.iziToast-wrapper-topRight .iziToast.iziToast-error {
   background: #ef4040 !important;
+}
+
+body
+  .iziToast-wrapper
+  .iziToast
+  .iziToast-body
+  .iziToast-texts
+  .iziToast-message {
+  color: #fff;
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
   letter-spacing: 0.03em;
-  color: #fff !important;
+  line-height: 150%;
 }
 
-.iziToast-wrapper {
-  top: 20px !important;
-  right: 20px !important;
+body .iziToast-wrapper .iziToast .iziToast-body {
+  padding: 0;
+  margin: 0;
+}
+
+body .iziToast .iziToast-close {
+  display: none;
 }

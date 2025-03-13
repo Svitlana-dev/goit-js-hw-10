@@ -27,19 +27,34 @@ const options = {
   clickOpens: true,
   allowInput: false,
 
+  locale: {
+    firstDayOfWeek: 1,
+    weekdays: {
+      shorthand: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+      longhand: [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+    },
+  },
+
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
-
-    if (selectedDate <= new Date()) {
+    
+    if (selectedDate > new Date()) {
+      userSelectedDate = selectedDate;
+      startButton.disabled = false;
+    } else {
       iziToast.error({
-        title: "Error",
         message: "Please choose a date in the future",
         position: "topRight",
       });
       startButton.disabled = true;
-    } else {
-      userSelectedDate = selectedDate;
-      startButton.disabled = false;
     }
   },
 };
